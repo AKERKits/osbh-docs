@@ -1,0 +1,60 @@
+{
+  "name": "particle-docs",
+  "version": "0.3.0",
+  "private": false,
+  "license": "CC-BY-SA-3.0",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/spark/docs.git"
+  },
+  "scripts": {
+    "start": "node ./scripts/server.js",
+    "test": "node ./node_modules/mocha/bin/mocha ./test/crawler.js --reporter dot",
+    "build": "node ./scripts/build.js",
+    "update-api": "git submodule update --init --recursive && cd api-node && git fetch && git merge origin/production && cd .."
+  },
+  "dependencies": {
+    "apidoc": "^0.13.1",
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "handlebars": "^3.0.1",
+    "jade": "^1.11.0",
+    "lodash": "^3.9.3",
+    "lunr": "^0.5.11",
+    "marked": "^0.3.3",
+    "metalsmith": "^1.7.0",
+    "metalsmith-autotoc": "git://github.com/spark/metalsmith-autotoc",
+    "metalsmith-clean-css": "^2.0.0",
+    "metalsmith-collections": "git://github.com/spark/metalsmith-collections#dynamic-collections",
+    "metalsmith-copy": "^0.2.1",
+    "metalsmith-filemetadata": "0.0.4",
+    "metalsmith-gzip": "^1.1.0",
+    "metalsmith-if": "0.0.1",
+    "metalsmith-ignore": "^0.1.2",
+    "metalsmith-in-place": "^1.0.1",
+    "metalsmith-less": "^2.0.0",
+    "metalsmith-lunr": "git://github.com/spark/metalsmith-lunr#0.3.0",
+    "metalsmith-markdown": "spark/metalsmith-markdown#0.4.0",
+    "metalsmith-move-up": "^1.0.0",
+    "metalsmith-paths": "2.1.1",
+    "metalsmith-permalinks": "^0.4.0",
+    "metalsmith-redirect": "^1.0.2",
+    "metalsmith-register-helpers": "git://github.com/brycekahle/metalsmith-register-helpers",
+    "metalsmith-register-partials": "git://github.com/spark/metalsmith-register-partials",
+    "metalsmith-serve": "0.0.7",
+    "metalsmith-templates": "^0.6.1",
+    "metalsmith-watch": "^1.0.1",
+    "minimatch": "^2.0.8",
+    "mocha": "^2.2.5",
+    "moment": "^2.17.1",
+    "prettify": "^0.1.7"
+  },
+  "devDependencies": {
+    "chalk": "^1.1.1",
+    "cheerio": "^0.16.0",
+    "eslint": "^2.8.0",
+    "eslint-config-particle": "^1.0.2",
+    "git-rev": "^0.2.1",
+    "simplecrawler": "spark/node-simplecrawler#v0.6.3"
+  }
+}

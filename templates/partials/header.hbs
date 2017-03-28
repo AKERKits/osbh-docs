@@ -1,0 +1,60 @@
+<div class='header'>
+  <div class='left'>
+    <div class="toggle-nav">
+      <a href="#" class="subnav-link toggle-navigation">
+        <i class="ion-navicon" title="show/hide the navigation"></i>
+      </a>
+    </div>
+    <a href="/" id="logo">
+      <img src="/assets/images/osbh-logo.svg">
+      <img src="/assets/images/osbh.svg">
+    </a>
+  </div>
+  <div class='right'>
+    <div class="sections">
+      <a class="nav {{#contains path.href 'beehives'}}active{{/contains}}" href="{{ behivesManuals.[0].path.href }}">Beehives</a>
+      <a class="nav {{#contains path.href 'sensors'}}active{{/contains}}" href="{{ sensorsManuals.[0].path.href }}{{ sensorsManuals.[0].path.name }}">Sensors</a>
+      <a class="nav {{#contains path.href 'data'}}active{{/contains}}" href="{{ dataManuals.[0].path.href }}{{ dataManuals.[0].path.name }}">Data</a>
+    </div>
+    <div class="dropdown mobile-only">
+      <a id="dLabel" data-target="#" class="nav" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+        {{first-word-in-relative-url path.href}}
+        <i class="ion-arrow-down-b"></i>
+      </a>
+      <ul class="dropdown-menu" aria-labelledby="dLabel">
+        <li><a href="{{ behivesManuals.[0].path.href }}{{ behivesManuals.[0].path.name }}">Beehives</a></li>
+        <li><a href="{{ assemblyManuals.[0].path.href }}{{ assemblyManuals.[0].path.name }}">Sensors</a></li>
+        <li><a href="{{ userManuals.[0].path.href }}{{ userManuals.[0].path.name }}">Data</a></li>
+      </ul>
+    </div>
+    {{#if formats}}
+      <div class="dropdown">
+        <a id="dLabel" data-target="#" class="nav nav-device" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+          <i class="im-devices-icon"></i>
+          {{#if solidworks}}
+            SolidWworks
+          {{/if}}
+          {{#if sketchup}}
+            Sketchup
+          {{/if}}
+          {{#if rhino}}
+            Rhino
+          {{/if}}
+        </a>
+        <ul class="dropdown-menu" aria-labelledby="dLabel">
+          {{#contains devices 'solidworks'}}
+            <li><a href="{{path.href}}{{path.name}}/solidworsk/">SolidWorks</a></li>
+          {{/contains}}
+          {{#contains devices 'sketchup'}}
+            <li><a href="{{path.href}}{{path.name}}/sketchup/">Sketchup</a></li>
+          {{/contains}}
+          {{#contains devices 'rhino'}}
+            <li><a href="{{path.href}}{{path.name}}/rhino/">Rhino</a></li>
+          {{/contains}}
+        </ul>
+      </div>
+    {{/if}}
+    <a href='https://github.com/akerkits/docs' class="edit" target="_blank"><i class="ion-edit"></i>Edit</a>
+
+  </div>
+</div>
