@@ -1,5 +1,5 @@
 addons:
-  ssh_known_hosts: 198.199.82.7
+  ssh_known_hosts: 159.203.118.230
 language: node_js
 sudo: required
 node_js:
