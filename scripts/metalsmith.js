@@ -98,53 +98,13 @@ exports.metalsmith = function() {
       directory: '../templates/helpers'
     }))
     .use(collections({
-      guide: {
-        pattern: 'guide/:section/*.md',
-        sortBy: 'order',
-        orderDynamicCollections: [
-          'getting-started',
-          'tools-and-features',
-          'how-to-build-a-product'
-        ]
-      },
-      reference: {
-        pattern: 'reference/*md',
-        sortBy: 'order'
-      },
-			tutorials: {
-				pattern: 'tutorials/:section/*.md',
+      examples: {
+				pattern: 'examples/:section/*.md',
 				sortBy: 'order',
 				orderDynamicCollections: [
 					'topics',
-					'projects',
-					'curriculum'
 				]
 			},
-      assemblyManuals: {
-        pattern: 'assembly-manuals/*.md',
-        sortBy: 'order'
-      },
-      userManuals: {
-        pattern: 'user-manuals/*.md',
-        sortBy: 'order'
-      },
-      businessDocs: {
-        pattern: 'open-business-model/:section/*.md',
-        sortBy: 'order'
-      },
-      beeDocs: {
-        pattern: 'open-source-beehives/:section/*.md',
-        sortBy: 'order'
-      },
-      support: {
-        pattern: 'support/:section/*.md',
-        sortBy: 'order',
-        orderDynamicCollections: [
-          'support-and-fulfillment',
-          'troubleshooting',
-          'inquiries'
-        ]
-      }
     }))//end of collections/sections
     .use(copy({
       pattern: '**/*.jade',
